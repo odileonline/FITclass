@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style>
+	  body {background-color:#F49951}
+	  h1   {color:#506FC1}
+	  p    {color:#F6F5F4}
+	</style>
+	
+	<title>Currency calculator</title>
+
+	<h1>How much will I get? </h1>
+</head>
+
+<h3>1. Amount</h3>
+
+<p>How much do you want to exchange? <input id="amount"></input></p>
+
+<h3>2. Currency</h3>
+<p>Choose the currency
+
+<select id="currency-select">
+	<option value="EUR">EUROS</option>
+	<option value="USD">USD</option>
+	
+</select> </p>
+
+<button id="convert">Convert</button>
+
+<script>
+
+	var selection = document.getElementById('currency-select');
+	var num = document.getElementById('amount');
+	var display = "Your awesome total is: ";
+	
+	convert.onclick = function() { 
+	
+			var currency = selection.value;
+			var amount = num.value;
+			
+			// === : Boolean equal
+	
+			var isAmericanDollar = (currency === "USD");
+			
+			if (isAmericanDollar) {
+				display = display + parseInt(amount); // shortcut of below
+				// display = display + total; // same as above
+			}
+			else {
+				display = display + (parseInt(amount)/1.23);
+			}
+			
+		
+		alert(display);
+		console.log(display);
+	};
+	
+
+
+</script>
+
+</body>
+
+ <!--Why don't you add a button (say 'Convert") and attach an "onclick" action to execute when the button is clicked? We have seen previous examples in the calculator.html.-->
+ 
+ <!--display = display + " " + currency;-->

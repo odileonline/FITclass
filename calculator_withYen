@@ -1,0 +1,68 @@
+<!doctype html>
+
+<html>
+
+<h1> Currency converter </h1>
+
+<ul>
+   <li>Right now, the <b>total</b>  variable has a value of 30. Instead of 30, recover the value from the <b>amount</b> input field</li>
+   <li>Add another currency, say "YEN" and compute into the yen currency according to this formula: USD * 121.50</li>
+   <li>Right now, we compute only after <b>selection.onchange</b>, let's compute also when we press the <b>Compute</b> button</li>
+   <li>For each numeric rate, create a variable to hold this value (hint: choose a good name)</li>
+</ul>
+
+Amount: <input id="amount"></input>
+
+convert to
+<select id="currency-select">
+	<option value="EUR">EUROS</option>
+	<option value="USD">USD</option>
+	<option value="Y">YEN</option>
+</select>
+
+<button id="compute">Compute</button>
+
+<script>
+
+	var selection = document.getElementById('currency-select');
+	var amount = document.getElementById('amount');
+	var computeButton = document.getElementById('compute');
+	
+
+	
+	selection.onchange = function() {
+			var currency = selection.value;
+			var total = amount.value;
+			var isAmericanDollar = (currency === "USD");
+			var isEuros = (currency === "EUR");
+			var isYen = (currency === "Y");	
+			var display = "Your awesome total is: ";
+			
+			if (isAmericanDollar) {
+				display += total; 
+				// shortcut of below
+				// display = display + total; // same as above
+				
+			} else if (isYen) {
+				display = display + (total * 121.5);
+				//when left to display + total result is 1212  -- as if it took the first display then the second then the third. ??	
+				
+			} else {
+				display = display + (total * 1.23);
+				
+			}
+			console.log(currency);	
+							
+		
+			computeButton.onclick = function () {
+			console.log(isYen);
+			alert(display);	
+			}
+};
+			
+	
+</script>
+
+</html>
+
+<!--how does one checks the script alone? in repl.it for ex?-->
